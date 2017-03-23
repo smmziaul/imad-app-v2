@@ -1,41 +1,31 @@
 <!doctype html>
 <html>
     <head>
-        <!--
-        <script type="text/javascript">
-        $(document).ready(function () {
-            //Disable mouse right click
-            $("body").on("contextmenu",function(e){
-                return false;
-            });
-        });
-        </script>
-        -->
-        <script type="text/javascript">
-        document.addEventListener('contextmenu', event => event.preventDefault());
-        </script>
-        <title>Web-App :: smmziaul</title>
-        <link href="/ui/style.css" rel="stylesheet"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/ui/style.css" rel="stylesheet" />
     </head>
     <body>
-        <center>
-            <div >
-                <h1>SOOFI HUSSAIN S.M.M.</h1>
-                <h5>Third Year Computer Science & Engineering student, Anna University, Chennai - 600 025.</h5>
-                <img src="http://coe1.annauniv.edu/home/images/aulo.jpg">
-                <hr>
-                <h5>Welcome to my first Web - App...</h5>
+        <div class="container">
+            <div class="center">
+                <img id='madi' src="https://pbs.twimg.com/profile_images/794285789240623104/Cyio02cd_400x400.jpg" class="img-medium"/>
             </div>
-            <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-            <script type="text/javascript" src="/ui/main.js"></script>
-        
-            <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="smmziaul">
-                <a target="_blank" class="LI-simple-link" href='https://in.linkedin.com/in/smmziaul?trk=profile-badge'>SOOFI HUSSAIN S.M.M.</a>
+            <h3>About Me</h3>
+            <div>
+                Hi. My name is Tanmai Gopal<br/>
+                I work at Hasura
             </div>
-            <a href="https://www.facebook.com/smmziaul" target="_blank">
-            <img src="https://en.facebookbrand.com/wp-content/uploads/2016/05/FB-fLogo-Blue-broadcast-2.png">
-            </a>
-        </center>
+            <hr/>
+            <div id="login_area">
+                <center>Loading login status...</center>
+            </div>
+            <hr/>
+            <h3>My Articles</h3>
+            <div id="articles">
+                <center>Loading articles...</center>
+            </div>
+            <div class="footer">
+            </div>
+        </div>
+        <script type="text/javascript" src="/ui/main.js">
+        </script>
     </body>
 </html>
