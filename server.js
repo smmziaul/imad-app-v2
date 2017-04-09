@@ -69,17 +69,15 @@ function createTemplate (data) {
     return htmlTemplate;
 }
 
-app.get('/', function (req, res) {
+app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-
 
 function hash (input, salt) {
     // How do we create a hash?
     var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
     return ["pbkdf2", "10000", salt, hashed.toString('hex')].join('$');
 }
-
 
 app.get('/hash/:input', function(req, res) {
    var hashedString = hash(req.params.input, 'this-is-some-random-string');
@@ -94,7 +92,7 @@ app.post('/create-user', function (req, res) {
    var password = req.body.password;
    var salt = crypto.randomBytes(128).toString('hex');
    var dbString = hash(password, salt);
-   pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, dbString], function (err, result) {
+   pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, dbString], function(err, result) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
@@ -119,15 +117,12 @@ app.post('/login', function (req, res) {
               var salt = dbString.split('$')[2];
               var hashedPassword = hash(password, salt); // Creating a hash based on the password submitted and the original salt
               if (hashedPassword === dbString) {
-                
                 // Set the session
                 req.session.auth = {userId: result.rows[0].id};
                 // set cookie with a session id
                 // internally, on the server side, it maps the session id to an object
                 // { auth: {userId }}
-                
                 res.send('credentials correct!');
-                
               } else {
                 res.status(403).send('username/password is invalid');
               }
@@ -214,6 +209,7 @@ app.post('/submit-comment/:articleName', function (req, res) {
 });
 
 app.get('/articles/:articleName', function (req, res) {
+  // SQL Injection can happen if the user is allowed to decide the query. So, make the query using $1, $2 etc to avoid that...
   // SELECT * FROM article WHERE title = '\'; DELETE WHERE a = \'asdf'
   pool.query("SELECT * FROM article WHERE title = $1", [req.params.articleName], function (err, result) {
     if (err) {
