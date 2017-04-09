@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>3D lines animation with three.js</title>
+        <title>Home | Web-App of smmziaul</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
         <style>
@@ -12,13 +12,13 @@
                 font-family:arial;
                 color:#fff;
             }
-            h1{
+            h1 {
                 margin:0;
             }
             a {
                 color:#0078ff;
             }
-            #canvas{
+            #canvas {
                 width:100%;
                 height:700px;
                 overflow: hidden;
@@ -27,11 +27,11 @@
                 left:0;
                 background-color: #1a1724;               
             }
-            .canvas-wrap{
+            .canvas-wrap {
                 position:relative;
                 
             }
-            div.canvas-content{
+            div.canvas-content {
                 position:relative;
                 z-index:2000;
                 color:#fff;
@@ -42,25 +42,21 @@
     </head>
     <body>
         <section class="canvas-wrap">
-            <div class="canvas-content">
-                <h1>3D lines animation with three.js</h1>
-            </div>
+            <div class="canvas-content"></div>
             <div id="canvas" class="gradient"></div>
-            
         </section>
-        
         <!-- Main library -->
         <script src="/three.min.js"></script>
-      
         <!-- Helpers -->
         <script src="/projector.js"></script>
         <script src="/canvas-renderer.js"></script>
-
         <!-- Visualitzation adjustments -->
         <script src="/3d-lines-animation.js"></script>
-
         <!-- Animated background color -->
         <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
         <script src="/color.js"></script>
+        <div id='div1'>
+            
+        </div>
     </body>
 </html>
