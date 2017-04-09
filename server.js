@@ -1,3 +1,4 @@
+// importing packages needed
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
@@ -6,9 +7,10 @@ var crypto = require('crypto');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
+// db configuration
 var config = {
     user: 'smmziaul',
-    database: 'smmziaul ',
+    database: 'smmziaul',
     host: 'db.imad.hasura-app.io',
     port: '5432',
     password: process.env.DB_PASSWORD
