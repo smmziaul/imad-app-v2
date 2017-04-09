@@ -240,3 +240,22 @@ app.listen(8080, function () {
 app.get('/test', function (req, res) {
   res.sendFile(path.join(__dirname, '/', 'index.html'));
 });
+
+app.get('/3d-lines-animation.js', function (req, res) {
+  res.sendFile(path.join(__dirname, '/', '3d-lines-animation.js'));
+});
+app.get('/canvas-renderer.js', function (req, res) {
+  res.sendFile(path.join(__dirname, '/', 'canvas-renderer.js'));
+});
+
+app.get('/color.js', function (req, res) {
+  res.sendFile(path.join(__dirname, '/', 'color.js'));
+});
+
+app.get('/projector.js', function (req, res) {
+  res.sendFile(path.join(__dirname, '/', 'projector.js'));
+});
+
+app.get('/three.min.js', function (req, res) {
+  res.sendFile(path.join(__dirname, '/', 'three.min.js'));
+});
